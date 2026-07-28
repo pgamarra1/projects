@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manual Test Case Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel intro">
+        <h1>Manual Test Case Generator</h1>
+        <p>
+          Paste user stories or requirements and turn them into structured manual
+          test cases with clear steps and expected results.
+        </p>
+
+        <form id="generator-form">
+          <label for="requirements">Requirements or user stories</label>
+          <textarea
+            id="requirements"
+            rows="12"
+            placeholder="Example: As a customer, I want to reset my password so that I can sign in again. The system should send a reset email within 2 minutes."
+          ></textarea>
+
+          <div class="control-row">
+            <div class="control-group">
+              <label for="template-select">Template type</label>
+              <select id="template-select">
+                <option value="functional">Functional</option>
+                <option value="smoke">Smoke</option>
+                <option value="regression">Regression</option>
+                <option value="negative">Negative</option>
+                <option value="ui">UI</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label>Export</label>
+              <div class="export-buttons">
+                <button type="button" id="export-csv">Export CSV</button>
+                <button type="button" id="export-excel">Export Excel</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="submit">Generate test cases</button>
+            <button type="button" id="load-sample">Load sample</button>
+            <button type="button" id="clear-input">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel output">
+        <div class="output-toolbar">
+          <h2>Generated test cases</h2>
+          <button type="button" id="copy-output">Copy summary</button>
+        </div>
+        <div id="result" class="result-placeholder">
+          Your generated test cases will appear here.
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
